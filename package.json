@@ -1,0 +1,44 @@
+{
+  "name": "smile!",
+  "version": "1.0.0",
+  "description": "A simple application for taking photos and modifying them",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkocjan/smile.git"
+  },
+  "keywords": [
+    "web",
+    "mobile",
+    "phone",
+    "app",
+    "hybrid",
+    "application",
+    "phonegap",
+    "cordova",
+    "jquery",
+    "jquery-mobile",
+    "jquerymobile",
+    "jq",
+    "jqm",
+    "js",
+    "native",
+    "camera",
+    "media",
+    "take",
+    "photo",
+    "filters",
+    "js",
+    "html",
+    "css"
+  ],
+  "author": "Daniel Kocjan & Sebastian Mieszczańczyk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dkocjan/smile/issues"
+  },
+  "homepage": "https://github.com/dkocjan/smile#readme"
+}

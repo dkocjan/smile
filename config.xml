@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="smile" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+
+  <name>Smile!</name>
+  <description>
+    A simple application for taking photos and modifying them
+  </description>
+  <author href="http://github.com/dkocjan" email="dkocjan123@gmail.com">
+    Daniel Kocjan, Sebastian Mieszczańczyk
+  </author>
+
+  <!--<content src="index.html" />-->
+
+  <!-- Options -->
+  <preference name="DisallowOverscroll" value="true" />
+  <preference name="android-minSdkVersion" value="14" />
+
+  <!-- Plugins -->
+  <plugin name="cordova-plugin-camera" spec="~2.4.0" />
+  <plugin name="cordova-plugin-file" spec="~4.3.2" />
+  <plugin name="cordova-plugin-media-capture" spec="~1.4.2" />
+
+</widget>

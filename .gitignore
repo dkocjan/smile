@@ -1,0 +1,46 @@
+/node_modules
+bundle.js
+npm-debug.log
+
+bin/*
+!/plugins
+!/plugins/android.json
+!/plugins/fetch.json
+plugins/*
+platforms/*
+
+*/bin/*
+*/!/plugins
+*/!/plugins/android.json
+*/!/plugins/fetch.json
+*/plugins/*
+*/platforms/*
+
+*/plugins
+*/plugins/android.json
+*/plugins/fetch.json
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+.idea/*
+.idea
+
+## Directory-based project format
+.idea/workspace.xml
+.idea/tasks.xml
+# and these sensitive or high-churn files:
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+
+## File-based project format
+*.ipr
+*.iml
+*.iws
