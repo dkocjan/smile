@@ -1,10 +1,8 @@
 @import "./bootstrap/bootstrap";
 
 .filter-name {
-  text-transform: lowercase;
-  font-family: "Arial";
-  font-size: 15px;
-  letter-spacing: 0px;
+  // font-family: "Arial";
+  font-size: 16px;
 }
 
 input[type=range].filter-settings {
@@ -12,9 +10,11 @@ input[type=range].filter-settings {
   width: 100%;
   margin: 5px 0;
 }
+
 input[type=range].filter-settings:focus {
   outline: none;
 }
+
 input[type=range].filter-settings::-webkit-slider-runnable-track {
   width: 100%;
   height: 5px;
@@ -24,6 +24,7 @@ input[type=range].filter-settings::-webkit-slider-runnable-track {
   border-radius: 25px;
   border: 0.5px solid #960101;
 }
+
 input[type=range].filter-settings::-webkit-slider-thumb {
   box-shadow: 0.7px 0.7px 1.9px #ff3330, 0px 0px 0.7px #ff4c4a;
   border: 1px solid #000000;
@@ -35,9 +36,11 @@ input[type=range].filter-settings::-webkit-slider-thumb {
   -webkit-appearance: none;
   margin-top: -5.5px;
 }
+
 input[type=range].filter-settings:focus::-webkit-slider-runnable-track {
   background: #656767;
 }
+
 input[type=range].filter-settings::-moz-range-track {
   width: 100%;
   height: 5px;
@@ -47,6 +50,7 @@ input[type=range].filter-settings::-moz-range-track {
   border-radius: 25px;
   border: 0.5px solid #960101;
 }
+
 input[type=range].filter-settings::-moz-range-thumb {
   box-shadow: 0.7px 0.7px 1.9px #ff3330, 0px 0px 0.7px #ff4c4a;
   border: 1px solid #000000;
@@ -56,6 +60,7 @@ input[type=range].filter-settings::-moz-range-thumb {
   background: #ff5062;
   cursor: pointer;
 }
+
 input[type=range].filter-settings::-ms-track {
   width: 100%;
   height: 5px;
@@ -64,18 +69,21 @@ input[type=range].filter-settings::-ms-track {
   border-color: transparent;
   color: transparent;
 }
+
 input[type=range].filter-settings::-ms-fill-lower {
   background: #333333;
   border: 0.5px solid #960101;
   border-radius: 50px;
   box-shadow: 1.9px 1.9px 4.5px rgba(0, 0, 0, 0.38), 0px 0px 1.9px rgba(13, 13, 13, 0.38);
 }
+
 input[type=range].filter-settings::-ms-fill-upper {
   background: #4c4d4d;
   border: 0.5px solid #960101;
   border-radius: 50px;
   box-shadow: 1.9px 1.9px 4.5px rgba(0, 0, 0, 0.38), 0px 0px 1.9px rgba(13, 13, 13, 0.38);
 }
+
 input[type=range].filter-settings::-ms-thumb {
   box-shadow: 0.7px 0.7px 1.9px #ff3330, 0px 0px 0.7px #ff4c4a;
   border: 1px solid #000000;
@@ -86,9 +94,11 @@ input[type=range].filter-settings::-ms-thumb {
   cursor: pointer;
   height: 5px;
 }
+
 input[type=range].filter-settings:focus::-ms-fill-lower {
   background: #4c4d4d;
 }
+
 input[type=range].filter-settings:focus::-ms-fill-upper {
   background: #656767;
 }

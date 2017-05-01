@@ -1,7 +1,7 @@
 Caman('#image', '../img/1.jpg', () => {
-  this.render()
+  console.log('CamanJS works!')
 })
 
-Caman('#image', () => {
-  this.brightness(50).render()
-})
+// Caman('#image', () => {
+//   // this.brightness(50).render()
+// })

@@ -7,14 +7,9 @@
   <meta name="msapplication-tap-highlight" content="no" />
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
   <title>Smile!</title>
-  <link rel="stylesheet" href="css/styles.css">
 
-</head>
-
-<body>
-  <div class="app">
-    <h1>Smile!</h1>
-  </div>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/font-awesome.min.css">
 
   <!-- Cordova -->
   <script src="cordova.js"></script>
@@ -31,8 +26,130 @@
   <!-- Caman -->
   <script src="js/caman.full.min.js"></script>
 
+  <!-- Caman Scripts -->
+  <script src="js/caman-scripts.js"></script>
+
   <!-- App -->
   <script src="js/app.js"></script>
+
+  <!-- SCSS output -->
+  <!-- build:css -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- endbuild -->
+
+</head>
+
+<body>
+  <div id="app">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-center">Smile!</h1>
+        </div>
+      </div>
+
+      <div class="row mt-2 mb-auto">
+
+        <div class="col-12 col-lg-6">
+          <canvas id="image" class="img-fluid"></canvas>
+        </div>
+
+        <div class="col-12 col-lg-6">
+
+          <form>
+            <div class="form-group row">
+              <label class="col-4 col-sm-2 col-form-label filter-name">Brightness</label>
+              <div class="col-1"><span class="fa fa-minus"></span></div>
+              <div class="col-6 col-sm-4">
+                <input type="range" min="-100" max="100" step="1" value="0" data-filter="brightness" class="form-control filter-settings">
+              </div>
+              <div class="col-1 pl-0"><span class="fa fa-plus"></span></div>
+
+              <label class="col-4 col-sm-2 col-form-label filter-name">Contrast</label>
+              <div class="col-1"><span class="fa fa-minus"></span></div>
+              <div class="col-6 col-sm-4">
+                <input type="range" min="-100" max="100" step="1" value="0" data-filter="contrast" class="form-control filter-settings">
+              </div>
+              <div class="col-1 pl-0"><span class="fa fa-plus"></span></div>
+
+              <label class="col-4 col-sm-2 col-form-label filter-name">Saturation</label>
+              <div class="col-1"><span class="fa fa-minus"></span></div>
+              <div class="col-6 col-sm-4">
+                <input type="range" min="-100" max="100" step="1" value="0" data-filter="saturation" class="form-control filter-settings">
+              </div>
+              <div class="col-1 pl-0"><span class="fa fa-plus"></span></div>
+
+              <label class="col-4 col-sm-2 col-form-label filter-name">Vibrance</label>
+              <div class="col-1"><span class="fa fa-minus"></span></div>
+              <div class="col-6 col-sm-4">
+                <input type="range" min="-100" max="100" step="1" value="0" data-filter="vibrance" class="form-control filter-settings">
+              </div>
+              <div class="col-1 pl-0"><span class="fa fa-plus"></span></div>
+
+              <label class="col-4 col-sm-2 col-form-label filter-name">Exposure</label>
+              <div class="col-1"><span class="fa fa-minus"></span></div>
+              <div class="col-6 col-sm-4">
+                <input type="range" min="-100" max="100" step="1" value="0" data-filter="exposure" class="form-control filter-settings">
+              </div>
+              <div class="col-1 pl-0"><span class="fa fa-plus"></span></div>
+
+              <label class="col-4 col-sm-2 col-form-label filter-name">Hue</label>
+              <div class="col-1"><span class="fa fa-minus"></span></div>
+              <div class="col-6 col-sm-4">
+                <input type="range" min="-100" max="100" step="1" value="0" data-filter="hue" class="form-control filter-settings">
+              </div>
+              <div class="col-1 pl-0"><span class="fa fa-plus"></span></div>
+
+              <label class="col-4 col-sm-2 col-form-label filter-name">Sepia</label>
+              <div class="col-1"><span class="fa fa-minus"></span></div>
+              <div class="col-6 col-sm-4">
+                <input type="range" min="-100" max="100" step="1" value="0" data-filter="sepia" class="form-control filter-settings">
+              </div>
+              <div class="col-1 pl-0"><span class="fa fa-plus"></span></div>
+
+              <label class="col-4 col-sm-2 col-form-label filter-name">Gamma</label>
+              <div class="col-1"><span class="fa fa-minus"></span></div>
+              <div class="col-6 col-sm-4">
+                <input type="range" min="-100" max="100" step="1" value="0" data-filter="gamma" class="form-control filter-settings">
+              </div>
+              <div class="col-1 pl-0"><span class="fa fa-plus"></span></div>
+
+              <label class="col-4 col-sm-2 col-form-label filter-name">Noise</label>
+              <div class="col-1"><span class="fa fa-minus"></span></div>
+              <div class="col-6 col-sm-4">
+                <input type="range" min="-100" max="100" step="1" value="0" data-filter="noise" class="form-control filter-settings">
+              </div>
+              <div class="col-1 pl-0"><span class="fa fa-plus"></span></div>
+
+              <label class="col-4 col-sm-2 col-form-label filter-name">Clip</label>
+              <div class="col-1"><span class="fa fa-minus"></span></div>
+              <div class="col-6 col-sm-4">
+                <input type="range" min="-100" max="100" step="1" value="0" data-filter="clip" class="form-control filter-settings">
+              </div>
+              <div class="col-1 pl-0"><span class="fa fa-plus"></span></div>
+
+              <label class="col-4 col-sm-2 col-form-label filter-name">Sharpen</label>
+              <div class="col-1"><span class="fa fa-minus"></span></div>
+              <div class="col-6 col-sm-4">
+                <input type="range" min="-100" max="100" step="1" value="0" data-filter="sharpen" class="form-control filter-settings">
+              </div>
+              <div class="col-1 pl-0"><span class="fa fa-plus"></span></div>
+
+              <label class="col-4 col-sm-2 col-form-label filter-name">Blur</label>
+              <div class="col-1"><span class="fa fa-minus"></span></div>
+              <div class="col-6 col-sm-4">
+                <input type="range" min="-100" max="100" step="1" value="0" data-filter="blur" class="form-control filter-settings">
+              </div>
+              <div class="col-1 pl-0"><span class="fa fa-plus"></span></div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 </body>
 
 </html>
