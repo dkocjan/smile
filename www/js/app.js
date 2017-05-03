@@ -8,6 +8,8 @@ const app = {
   // Bind event listeners
   bindEvents: () => {
     document.addEventListener('deviceready', app.onDeviceReady, false)
+    document.getElementById('takePhoto').addEventListener('click', app.takePhoto, false)
+    document.getElementById('choosePhoto').addEventListener('click', app.choosePhoto, false)
   },
   
   // Device ready
@@ -15,42 +17,89 @@ const app = {
     console.log('Device Ready!')
   },
   
-  // Read file
-  readFile: (fileEntry) => {
+  takePhoto: () => {
     
-    fileEntry.file((file) => {
-      let reader = new FileReader()
+    let options = {
+      sourceType:      Camera.PictureSourceType.CAMERA,
+      targetWidth:     400,
+      targetHeight:    400,
+      quality:         50,
+      destinationType: Camera.DestinationType.FILE_URI
+    }
+    
+    navigator.camera.getPicture(onTakeSuccess, onTakeFail, options)
+    
+    function onTakeSuccess(imageURI) {
+      let img = `<img src="${imageURI}" alt="" id="image" class="img-fluid mt-2"/>`
       
-      reader.onloadend = () => {
-        console.log(`Successful file read: ${this.result}`)
-      }
-      
-      reader.readAsText(file)
-    }, () => console.log(`Error reading file!`))
+      $('#photoContainer').html(img)
+    }
+    
+    function onTakeFail(message) {
+      console.log('Failed: ' + message)
+    }
     
   },
   
-  // Write file
-  writeFile: (fileEntry, dataObj) => {
+  choosePhoto: () => {
     
-    // Create a FileWriter object for our fileEntry (log.txt)
-    fileEntry.createWriter((fileWriter) => {
+    let options = {
+      sourceType:      Camera.PictureSourceType.PHOTOLIBRARY,
+      targetWidth:     400,
+      targetHeight:    400,
+      quality:         50,
+      destinationType: Camera.DestinationType.FILE_URI
+    }
+    
+    navigator.camera.getPicture(onGetSuccess, onGetFail, options)
+    
+    function onGetSuccess(imageURI) {
+      let img = `<img src="${imageURI}" alt="" id="image" class="img-fluid mt-2"/>`
       
-      fileWriter.onwriteend = () => {
-        console.log('Successful file write...')
-        readFile(fileEntry)
-      }
+      $('#photoContainer').html(img)
+  
+      $(function () {
+        Caman('#image', function () {
+          this.resize()render()
+        })
+    
+        let filters = $('#filters button')
+    
+        filters.click(function (e) {
       
-      fileWriter.onerror = (e) => {
-        console.log(`Failed writing file: ${e.toString()}`)
-      }
+          e.preventDefault()
       
-      if (!dataObj) {
-        dataObj = new Blob(['some file data'], { type: 'text/plain' })
-      }
+          let f = $(this)
       
-      fileWriter.write(dataObj)
-    })
+          if (f.is('.active')) {
+            // Apply filters only once
+            return false
+          }
+      
+          filters.removeClass('active')
+          f.addClass('active')
+          // Listen for clicks on the filters
+          let effect = $.trim(f[ 0 ].id)
+      
+          console.log(effect)
+      
+          Caman('#image', function () {
+            // If such an effect exists, use it:
+            if (effect in this) {
+              this.revert()
+              this[ effect ]()
+              this.render()
+            }
+          })
+        })
+      })
+  
+  
+    }
+    
+    function onGetFail(message) {
+      console.log('Failed: ' + message)
+    }
     
   }
   
