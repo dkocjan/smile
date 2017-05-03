@@ -8,8 +8,12 @@ const app = {
   // Bind event listeners
   bindEvents: () => {
     document.addEventListener('deviceready', app.onDeviceReady, false)
-    document.getElementById('takePhoto').addEventListener('click', app.takePhoto, false)
-    document.getElementById('choosePhoto').addEventListener('click', app.choosePhoto, false)
+    /*document.getElementById('takePhoto').addEventListener('click', app.takePhoto, false)
+     document.getElementById('choosePhoto').addEventListener('click', app.choosePhoto, false)
+     document.getElementById('loadPhoto').addEventListener('click', app.loadPhoto, false)*/
+    $('#takePhoto').click(function(){app.getPhoto('CAMERA')})
+    $('#choosePhoto').click(function(){app.getPhoto('LIBRARY')})
+    $('#loadPhoto').click(app.loadPhoto)
   },
   
   // Device ready
@@ -17,89 +21,117 @@ const app = {
     console.log('Device Ready!')
   },
   
-  takePhoto: () => {
-    
+  getPhoto: (type) => {
+    console.log("getPhoto called, type=" + type);
     let options = {
-      sourceType:      Camera.PictureSourceType.CAMERA,
       targetWidth:     400,
       targetHeight:    400,
       quality:         50,
       destinationType: Camera.DestinationType.FILE_URI
     }
+    if (type === 'CAMERA')
+      options.sourceType = Camera.PictureSourceType.CAMERA
+    else if (type === 'LIBRARY')
+      options.sourceType = Camera.PictureSourceType.PHOTOLIBRARY
     
-    navigator.camera.getPicture(onTakeSuccess, onTakeFail, options)
+    navigator.camera.getPicture(onSuccess, onFail, options)
     
-    function onTakeSuccess(imageURI) {
+    function onSuccess(imageURI) {
       let img = `<img src="${imageURI}" alt="" id="image" class="img-fluid mt-2"/>`
       
       $('#photoContainer').html(img)
+      
+      app.camanScripts()
     }
     
-    function onTakeFail(message) {
+    function onFail(message) {
       console.log('Failed: ' + message)
     }
     
   },
   
-  choosePhoto: () => {
-    
-    let options = {
-      sourceType:      Camera.PictureSourceType.PHOTOLIBRARY,
-      targetWidth:     400,
-      targetHeight:    400,
-      quality:         50,
-      destinationType: Camera.DestinationType.FILE_URI
-    }
-    
-    navigator.camera.getPicture(onGetSuccess, onGetFail, options)
-    
-    function onGetSuccess(imageURI) {
-      let img = `<img src="${imageURI}" alt="" id="image" class="img-fluid mt-2"/>`
-      
-      $('#photoContainer').html(img)
+  camanScripts: () => {
   
-      $(function () {
+  
+    $(function () {
+      Caman('#image', function () {
+        this.render()
+      })
+    
+      let filters = $('#filters button')
+    
+      filters.click(function (e) {
+      
+        e.preventDefault()
+      
+        let f = $(this)
+      
+        if (f.is('.active')) {
+          // Apply filters only once
+          return false
+        }
+      
+        filters.removeClass('active')
+        f.addClass('active')
+        // Listen for clicks on the filters
+        let effect = $.trim(f[ 0 ].id)
+      
+        console.log(effect)
+      
         Caman('#image', function () {
-          this.resize()render()
-        })
-    
-        let filters = $('#filters button')
-    
-        filters.click(function (e) {
-      
-          e.preventDefault()
-      
-          let f = $(this)
-      
-          if (f.is('.active')) {
-            // Apply filters only once
-            return false
+          // If such an effect exists, use it:
+          if (effect in this) {
+            this.revert()
+            this[ effect ]()
+            this.render()
           }
-      
-          filters.removeClass('active')
-          f.addClass('active')
-          // Listen for clicks on the filters
-          let effect = $.trim(f[ 0 ].id)
-      
-          console.log(effect)
-      
-          Caman('#image', function () {
-            // If such an effect exists, use it:
-            if (effect in this) {
-              this.revert()
-              this[ effect ]()
-              this.render()
-            }
-          })
         })
       })
-  
-  
-    }
+    })
     
-    function onGetFail(message) {
-      console.log('Failed: ' + message)
-    }
+  },
+  
+  loadPhoto: () => {
+    
+    let img = `<img src="../img/2.jpg" alt="" id="image" class="img-fluid mt-2"/>`
+    
+    $('#photoContainer').html(img)
+    
+    $(function () {
+      Caman('#image', function () {
+        this.render()
+      })
+      
+      let filters = $('#filters button')
+      
+      filters.click(function (e) {
+        
+        e.preventDefault()
+        
+        let f = $(this)
+        
+        if (f.is('.active')) {
+          // Apply filters only once
+          return false
+        }
+        
+        filters.removeClass('active')
+        f.addClass('active')
+        // Listen for clicks on the filters
+        let effect = $.trim(f[ 0 ].id)
+        
+        console.log(effect)
+        
+        Caman('#image', function () {
+          // If such an effect exists, use it:
+          if (effect in this) {
+            this.revert()
+            this[ effect ]()
+            this.render()
+          }
+        })
+      })
+    })
     
   }
   
