@@ -1,0 +1,152 @@
+<div id="app">
+
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <div class="col-12">
+        <h1 class="text-center">Smile!</h1>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-12 col-lg-6 offset-lg-3">
+        <canvas id="image" class="img-fluid"></canvas>
+      </div>
+
+    </div>
+
+    <form onsubmit="event.preventDefault()" class="container-fluid">
+
+      <div class="form-group row">
+
+        <!-- Brightness -->
+        <label for="brightness" class="col-6 col-sm-3 col-lg-2 col-form-label filter-name pl-0 text-right">Brightness <span class="fa fa-sun-o ml-2 mr-2"></span></label>
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-minus filter-minus" data-filter="brightness"></button>
+        <input value="0" type="text" class="col-2 col-sm-1 col-lg-1 filter-value text-center text-center" data-filter="brightness">
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-plus filter-plus" data-filter="brightness"></button>
+
+        <div class="col-12 col-sm-6 col-lg-3 pl-0 pr-0 mb-3">
+          <input type="range" min="-100" max="100" step="1" value="0" data-filter="brightness" class="form-control filter-settings pl-0 pr-0">
+        </div>
+
+        <!-- Contrast -->
+        <label for="" class="col-6 col-sm-3 col-lg-2 col-form-label filter-name pl-0 text-right">Contrast <span class="fa fa-adjust ml-2 mr-2"></span></label>
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-minus filter-minus" data-filter="contrast"></button>
+        <input value="0" type="text" class="col-2 col-sm-1 col-lg-1 filter-value text-center" data-filter="contrast">
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-plus filter-plus" data-filter="contrast"></button>
+
+        <div class="col-12 col-sm-6 col-lg-3 pl-0 pr-0 mb-3">
+          <input type="range" min="-100" max="100" step="1" value="0" data-filter="contrast" class="form-control filter-settings pl-0 pr-0">
+        </div>
+
+        <!-- Saturation -->
+        <label for="" class="col-6 col-sm-3 col-lg-2 col-form-label filter-name pl-0 text-right">Saturation <span class="fa fa-circle-o ml-2 mr-2"></span></label>
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-minus filter-minus" data-filter="saturation"></button>
+        <input value="0" type="text" class="col-2 col-sm-1 col-lg-1 filter-value text-center" data-filter="saturation">
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-plus filter-plus" data-filter="saturation"></button>
+
+        <div class="col-12 col-sm-6 col-lg-3 pl-0 pr-0 mb-3">
+          <input type="range" min="-100" max="100" step="1" value="0" data-filter="saturation" class="form-control filter-settings pl-0 pr-0">
+        </div>
+
+        <!-- Vibrance -->
+        <label for="" class="col-6 col-sm-3 col-lg-2 col-form-label filter-name pl-0 text-right">Vibrance <span class="fa fa-dot-circle-o ml-2 mr-2"></span></label>
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-minus filter-minus" data-filter="vibrance"></button>
+        <input value="0" type="text" class="col-2 col-sm-1 col-lg-1 filter-value text-center" data-filter="vibrance">
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-plus filter-plus" data-filter="vibrance"></button>
+
+        <div class="col-12 col-sm-6 col-lg-3 pl-0 pr-0 mb-3">
+          <input type="range" min="-100" max="100" step="1" value="0" data-filter="vibrance" class="form-control filter-settings pl-0 pr-0">
+        </div>
+
+        <!-- Exposure -->
+        <label for="" class="col-6 col-sm-3 col-lg-2 col-form-label filter-name pl-0 text-right">Exposure <span class="fa fa-moon-o ml-2 mr-2"></span></label>
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-minus filter-minus" data-filter="exposure"></button>
+        <input value="0" type="text" class="col-2 col-sm-1 col-lg-1 filter-value text-center" data-filter="exposure">
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-plus filter-plus" data-filter="exposure"></button>
+
+        <div class="col-12 col-sm-6 col-lg-3 pl-0 pr-0 mb-3">
+          <input type="range" min="-100" max="100" step="1" value="0" data-filter="exposure" class="form-control filter-settings pl-0 pr-0">
+        </div>
+
+        <!-- Hue -->
+        <label for="" class="col-6 col-sm-3 col-lg-2 col-form-label filter-name pl-0 text-right">Hue <span class="fa fa-circle ml-2 mr-2"></span></label>
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-minus filter-minus" data-filter="hue"></button>
+        <input value="0" type="text" class="col-2 col-sm-1 col-lg-1 filter-value text-center" data-filter="hue">
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-plus filter-plus" data-filter="hue"></button>
+
+        <div class="col-12 col-sm-6 col-lg-3 pl-0 pr-0 mb-3">
+          <input type="range" min="-100" max="100" step="1" value="0" data-filter="hue" class="form-control filter-settings pl-0 pr-0">
+        </div>
+
+        <!-- Sepia -->
+        <label for="" class="col-6 col-sm-3 col-lg-2 col-form-label filter-name pl-0 text-right">Sepia <span class="fa fa-th ml-2 mr-2"></span></label>
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-minus filter-minus" data-filter="sepia"></button>
+        <input value="0" type="text" class="col-2 col-sm-1 col-lg-1 filter-value text-center" data-filter="sepia">
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-plus filter-plus" data-filter="sepia"></button>
+
+        <div class="col-12 col-sm-6 col-lg-3 pl-0 pr-0 mb-3">
+          <input type="range" min="-100" max="100" step="1" value="0" data-filter="sepia" class="form-control filter-settings pl-0 pr-0">
+        </div>
+
+        <!-- Gamma -->
+        <label for="" class="col-6 col-sm-3 col-lg-2 col-form-label filter-name pl-0 text-right">Gamma <span class="fa fa-circle-o-notch ml-2 mr-2"></span></label>
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-minus filter-minus" data-filter="gamma"></button>
+        <input value="0" type="text" class="col-2 col-sm-1 col-lg-1 filter-value text-center" data-filter="gamma">
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-plus filter-plus" data-filter="gamma"></button>
+
+        <div class="col-12 col-sm-6 col-lg-3 pl-0 pr-0 mb-3">
+          <input type="range" min="-100" max="100" step="1" value="0" data-filter="gamma" class="form-control filter-settings pl-0 pr-0">
+        </div>
+
+        <!-- Noise -->
+        <label for="" class="col-6 col-sm-3 col-lg-2 col-form-label filter-name pl-0 text-right">Noise <span class="fa fa-arrows-alt ml-2 mr-2"></span></label>
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-minus filter-minus" data-filter="noise"></button>
+        <input value="0" type="text" class="col-2 col-sm-1 col-lg-1 filter-value text-center" data-filter="noise">
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-plus filter-plus" data-filter="noise"></button>
+
+        <div class="col-12 col-sm-6 col-lg-3 pl-0 pr-0 mb-3">
+          <input type="range" min="-100" max="100" step="1" value="0" data-filter="noise" class="form-control filter-settings pl-0 pr-0">
+        </div>
+
+        <!-- Clip -->
+        <label for="" class="col-6 col-sm-3 col-lg-2 col-form-label filter-name pl-0 text-right">Clip <span class="fa fa-chevron-down ml-2 mr-2"></span></label>
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-minus filter-minus" data-filter="clip"></button>
+        <input value="0" type="text" class="col-2 col-sm-1 col-lg-1 filter-value text-center" data-filter="clip">
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-plus filter-plus" data-filter="clip"></button>
+
+        <div class="col-12 col-sm-6 col-lg-3 pl-0 pr-0 mb-3">
+          <input type="range" min="-100" max="100" step="1" value="0" data-filter="clip" class="form-control filter-settings pl-0 pr-0">
+        </div>
+
+        <!-- Sharpen -->
+        <label for="" class="col-6 col-sm-3 col-lg-2 col-form-label filter-name pl-0 text-right">Sharpen <span class="fa fa-crosshairs ml-2 mr-2"></span></label>
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-minus filter-minus" data-filter="sharpen"></button>
+        <input value="0" type="text" class="col-2 col-sm-1 col-lg-1 filter-value text-center" data-filter="sharpen">
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-plus filter-plus" data-filter="sharpen"></button>
+
+        <div class="col-12 col-sm-6 col-lg-3 pl-0 pr-0 mb-3">
+          <input type="range" min="-100" max="100" step="1" value="0" data-filter="sharpen" class="form-control filter-settings pl-0 pr-0">
+        </div>
+
+        <!-- Blur -->
+        <label for="" class="col-6 col-sm-3 col-lg-2 col-form-label filter-name pl-0 text-right">Blur <span class="fa fa-tint ml-2 mr-2"></span></label>
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-minus filter-minus" data-filter="blur"></button>
+        <input value="0" type="text" class="col-2 col-sm-1 col-lg-1 filter-value text-center" data-filter="blur">
+        <button class="col-2 col-sm-1 hidden-lg-up btn btn-secondary fa fa-plus filter-plus" data-filter="blur"></button>
+
+        <div class="col-12 col-sm-6 col-lg-3 pl-0 pr-0 mb-3">
+          <input type="range" min="-100" max="100" step="1" value="0" data-filter="blur" class="form-control filter-settings pl-0 pr-0">
+        </div>
+
+      </div>
+
+    </form>
+
+
+  </div>
+
+</div>
