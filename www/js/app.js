@@ -8,11 +8,8 @@ const app = {
   // Bind event listeners
   bindEvents: () => {
     document.addEventListener('deviceready', app.onDeviceReady, false)
-    /*document.getElementById('takePhoto').addEventListener('click', app.takePhoto, false)
-     document.getElementById('choosePhoto').addEventListener('click', app.choosePhoto, false)
-     document.getElementById('loadPhoto').addEventListener('click', app.loadPhoto, false)*/
-    $('#takePhoto').click(function(){app.getPhoto('CAMERA')})
-    $('#choosePhoto').click(function(){app.getPhoto('LIBRARY')})
+    $('#takePhoto').click(function () {app.getPhoto('CAMERA')})
+    $('#choosePhoto').click(function () {app.getPhoto('LIBRARY')})
     $('#loadPhoto').click(app.loadPhoto)
   },
   
@@ -22,7 +19,7 @@ const app = {
   },
   
   getPhoto: (type) => {
-    console.log("getPhoto called, type=" + type);
+    console.log('getPhoto called, type=' + type)
     let options = {
       targetWidth:     400,
       targetHeight:    400,
@@ -42,42 +39,45 @@ const app = {
       $('#photoContainer').html(img)
       
       app.camanScripts()
+  
+      $('#loadPhotoButtons').children().removeClass('col-12').addClass('col-4')
+      $('#filtersContainer').removeClass('hidden-xs-up')
     }
     
     function onFail(message) {
-      console.log('Failed: ' + message)
+      navigator.notification.alert('Failed: ' + message)
     }
     
   },
   
   camanScripts: () => {
-  
-  
+    
+    
     $(function () {
       Caman('#image', function () {
         this.render()
       })
-    
-      let filters = $('#filters button')
-    
+      
+      let filters = $('#filters').children()
+      
       filters.click(function (e) {
-      
+        
         e.preventDefault()
-      
+        
         let f = $(this)
-      
+        
         if (f.is('.active')) {
           // Apply filters only once
           return false
         }
-      
+        
         filters.removeClass('active')
         f.addClass('active')
         // Listen for clicks on the filters
         let effect = $.trim(f[ 0 ].id)
-      
+        
         console.log(effect)
-      
+        
         Caman('#image', function () {
           // If such an effect exists, use it:
           if (effect in this) {
@@ -92,47 +92,12 @@ const app = {
   },
   
   loadPhoto: () => {
-    
     let img = `<img src="../img/2.jpg" alt="" id="image" class="img-fluid mt-2"/>`
-    
     $('#photoContainer').html(img)
+    app.camanScripts()
     
-    $(function () {
-      Caman('#image', function () {
-        this.render()
-      })
-      
-      let filters = $('#filters button')
-      
-      filters.click(function (e) {
-        
-        e.preventDefault()
-        
-        let f = $(this)
-        
-        if (f.is('.active')) {
-          // Apply filters only once
-          return false
-        }
-        
-        filters.removeClass('active')
-        f.addClass('active')
-        // Listen for clicks on the filters
-        let effect = $.trim(f[ 0 ].id)
-        
-        console.log(effect)
-        
-        Caman('#image', function () {
-          // If such an effect exists, use it:
-          if (effect in this) {
-            this.revert()
-            this[ effect ]()
-            this.render()
-          }
-        })
-      })
-    })
-    
+    $('#loadPhotoButtons').children().removeClass('col-12').addClass('col-4')
+    $('#filtersContainer').removeClass('hidden-xs-up')
   }
   
 }

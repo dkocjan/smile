@@ -43,14 +43,10 @@
 <div data-role="page" id="home">
 
   <!-- Header -->
-  <div data-role="header">
+  <div data-role="header" class="d-flex align-items-center">
 
-    <h1 class="pt-0 pb-0">
-      <img src="img/logo_256x256.png" alt="" height="50px" class="navbar-brand">
-      <img src="img/text_420x150.png" alt="" height="40px" class="navbar-brand">
-    </h1>
-
-    <a href="#menu" class="ui-btn ui-btn-right ui-btn-corner-all">
+    <img src="img/menu-logo_530x128.png" alt="" height="40px" class="d-inline-block ml-2 mt-2 mb-2">
+    <a href="#menu" class="ui-btn ui-btn-right ui-btn-corner-all mt-1">
       <i class="fa fa-bars fa-2x"></i>
     </a>
 
@@ -88,79 +84,80 @@
 
     <!-- Image -->
     <div class="container">
-      <div class="row">
-        <button class="col-4" id="takePhoto">Take</button>
-        <button class="col-4" id="choosePhoto">Choose</button>
-        <button class="col-4" id="loadPhoto">Load static</button>
+      <div class="row" id="loadPhotoButtons">
+        <button class="col-12" id="takePhoto">Take a photo</button>
+        <button class="col-12" id="choosePhoto">Choose photo from library</button>
+        <button class="col-12" id="loadPhoto">Load static (browser dev test)</button>
       </div>
       <div class="row">
-        <div class="col-12" id="photoContainer">
-          ...
+        <div class="col-12 text-center" id="photoContainer">
+          Load your photo!
         </div>
       </div>
     </div>
 
     <!-- Filters -->
-    <div class="container">
-      <div class="row" id="filters">
-        <!--<div class="button-wrap">-->
-        <!--<button class="ui-shadow ui-btn ui-corner-all">Button</button>-->
-        <!--</div>-->
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="vintage">
-          <small>Vintage</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="lomo">
-          <small>Lomo</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="clarity">
-          <small>Clarity</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="sinCity">
-          <small>Sin City</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="sunrise">
-          <small>Sunrise</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="crossProcess">
-          <small>Cross Process</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="orangePeel">
-          <small>Orange Peel</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="love">
-          <small>Love</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="grungy">
-          <small>Grungy</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="jarques">
-          <small>Jarques</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="pinhole">
-          <small>Pinhole</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="oldBoot">
-          <small>Old Boot</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="glowingSun">
-          <small>Glowing Sun</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="hazyDays">
-          <small>Hazy Days</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="herMajesty">
-          <small>Her Majesty</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="nostalgia">
-          <small>Nostalgia</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="hemingway">
-          <small>Hemingway</small>
-        </button>
-        <button class="col-4 ui-shadow ui-btn ui-corner-all mt-0 mb-0" id="concrete">
-          <small>Concrete</small>
-        </button>
+    <!--
+    w-100 ui-shadow ui-btn ui-corner-all mt-0 mb-0
+    -->
+    <div id="filtersContainer" class="hidden-xs-up">
+      <div id="filters" class="container-fluid">
+        <a href="#" id="vintage">
+          <span>Vintage</span>
+        </a>
+        <a href="#" id="lomo">
+          <span>Lomo</span>
+        </a>
+        <a href="#" id="clarity">
+          <span>Clarity</span>
+        </a>
+        <a href="#" id="sinCity">
+          <span>Sin City</span>
+        </a>
+        <a href="#" id="sunrise">
+          <span>Sunrise</span>
+        </a>
+        <a href="#" id="crossProcess">
+          <span>Cross Process</span>
+        </a>
+        <a href="#" id="orangePeel">
+          <span>Orange Peel</span>
+        </a>
+        <a href="#" id="love">
+          <span>Love</span>
+        </a>
+        <a href="#" id="grungy">
+          <span>Grungy</span>
+        </a>
+        <a href="#" id="jarques">
+          <span>Jarques</span>
+        </a>
+        <a href="#" id="pinhole">
+          <span>Pinhole</span>
+        </a>
+        <a href="#" id="oldBoot">
+          <span>Old Boot</span>
+        </a>
+        <a href="#" id="glowingSun">
+          <span>Glowing Sun</span>
+        </a>
+        <a href="#" id="hazyDays">
+          <span>Hazy Days</span>
+        </a>
+        <a href="#" id="herMajesty">
+          <span>Her Majesty</span>
+        </a>
+        <a href="#" id="nostalgia">
+          <span>Nostalgia</span>
+        </a>
+        <a href="#" id="hemingway">
+          <span>Hemingway</span>
+        </a>
+        <a href="#" id="concrete">
+          <span>Concrete</span>
+        </a>
       </div>
+      <span class="fa fa-arrows-h fa-2x" id="filterArrowsIcon"></span>
     </div>
 
   </div>
