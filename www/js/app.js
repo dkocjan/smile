@@ -8,9 +8,10 @@ const app = {
   // Bind event listeners
   bindEvents: () => {
     document.addEventListener('deviceready', app.onDeviceReady, false)
-    $('#takePhoto').click(function () {app.getPhoto('CAMERA')})
-    $('#choosePhoto').click(function () {app.getPhoto('LIBRARY')})
+    $('#takePhoto').click(() => app.getPhoto('CAMERA'))
+    $('#choosePhoto').click(() => app.getPhoto('LIBRARY'))
     $('#loadPhoto').click(app.loadPhoto)
+    $('#savePhoto').click(app.savePhoto)
   },
   
   // Device ready
@@ -19,10 +20,8 @@ const app = {
   },
   
   getPhoto: (type) => {
-    console.log('getPhoto called, type=' + type)
+    console.log(`getPhoto called, type=${type}`)
     let options = {
-      targetWidth:     400,
-      targetHeight:    400,
       quality:         50,
       destinationType: Camera.DestinationType.FILE_URI
     }
@@ -45,7 +44,7 @@ const app = {
     }
     
     function onFail(message) {
-      navigator.notification.alert('Failed: ' + message)
+      console.log('Failed: ' + message)
     }
     
   },
@@ -92,12 +91,18 @@ const app = {
   },
   
   loadPhoto: () => {
-    let img = `<img src="../img/2.jpg" alt="" id="image" class="img-fluid mt-2"/>`
+    let img = `<img src="../img/1.jpg" alt="" id="image" class="img-fluid mt-2"/>`
     $('#photoContainer').html(img)
     app.camanScripts()
     
     $('#loadPhotoButtons').children().removeClass('col-12').addClass('col-4')
     $('#filtersContainer').removeClass('hidden-xs-up')
+    $('#savePhotoContainer').removeClass('hidden-xs-up')
+  
+  },
+  
+  savePhoto: () => {
+  
   }
   
 }

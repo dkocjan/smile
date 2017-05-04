@@ -61,6 +61,10 @@
   display: inline-block;
 }
 
+#filtersContainer {
+  height: 60px;
+}
+
 // Sliders for range input
 input[type=range].filter-settings {
   -webkit-appearance: none;
