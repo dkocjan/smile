@@ -23,7 +23,7 @@ const app = {
   
   config: {
     // The better quality, the longer render time
-    quality:       60,
+    quality:       100,
     currentFilter: ''
   },
   
@@ -66,7 +66,7 @@ const app = {
   
   camanRenderImage: () => {
     Caman('#image', function () {
-      this.resize({ width: 300 })
+      this.resize({ width: 600 }) // The bigger width, the longer render time
       this.render()
     })
   },
@@ -169,17 +169,33 @@ const app = {
     console.log(id)
     
     Caman('#image', function () {
-      this.resize({
-        width: 300
-      })
+      
       this.render(() => {
-        this.save(`./static/${id}-${app.config.currentFilter}.png`)
+        let image = this.toBase64()
+        let params = {
+          data: image,
+          prefix: 'smile_',
+          format: 'JPG',
+          quality: '80',
+          mediaScanner: true
+        }
+        window.imageSaver.saveBase64Image(params, onSaveSuccess)
+        onSaveSuccess = (filePath) => console.log(`File saved on ${filePath}`)
+        onSaveError = (msg) => console.log(msg)
       })
+      
     })
   },
   
   sharePhoto: () => {
-  
+    Caman('#image', function() {
+      
+      this.render(() => {
+        let image = this.toBase64()
+        window.plugins.socialsharing.share(null, 'Android filename', `${image}`, null)
+      })
+      
+    })
   }
   
 }

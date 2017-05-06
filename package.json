@@ -1,62 +1,73 @@
 {
-  "name": "smile!",
-  "version": "1.0.0",
-  "description": "A simple application for taking photos and modifying them",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dkocjan/smile.git"
-  },
-  "keywords": [
-    "web",
-    "mobile",
-    "phone",
-    "app",
-    "hybrid",
-    "application",
-    "phonegap",
-    "cordova",
-    "jquery",
-    "jquery-mobile",
-    "jquerymobile",
-    "jq",
-    "jqm",
-    "js",
-    "native",
-    "camera",
-    "media",
-    "take",
-    "photo",
-    "filters",
-    "js",
-    "html",
-    "css"
-  ],
-  "author": "Daniel Kocjan & Sebastian Mieszczańczyk",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dkocjan/smile/issues"
-  },
-  "homepage": "https://github.com/dkocjan/smile#readme",
-  "devDependencies": {
-    "browser-sync": "^2.17.5",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-changed": "^1.3.2",
-    "gulp-clean-css": "^2.0.13",
-    "gulp-concat": "^2.6.0",
-    "gulp-html-replace": "^1.6.1",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-imagemin": "^3.1.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^2.2.0",
-    "gulp-uglify": "^2.0.0",
-    "path": "^0.12.7",
-    "run-sequence": "^1.2.2"
-  }
+    "name": "smile!",
+    "version": "1.0.0",
+    "description": "A simple application for taking photos and modifying them",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dkocjan/smile.git"
+    },
+    "keywords": [
+        "web",
+        "mobile",
+        "phone",
+        "app",
+        "hybrid",
+        "application",
+        "phonegap",
+        "cordova",
+        "jquery",
+        "jquery-mobile",
+        "jquerymobile",
+        "jq",
+        "jqm",
+        "js",
+        "native",
+        "camera",
+        "media",
+        "take",
+        "photo",
+        "filters",
+        "js",
+        "html",
+        "css"
+    ],
+    "author": "Daniel Kocjan & Sebastian Mieszczańczyk",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/dkocjan/smile/issues"
+    },
+    "homepage": "https://github.com/dkocjan/smile#readme",
+    "devDependencies": {
+        "browser-sync": "^2.17.5",
+        "del": "^2.2.2",
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^3.1.1",
+        "gulp-changed": "^1.3.2",
+        "gulp-clean-css": "^2.0.13",
+        "gulp-concat": "^2.6.0",
+        "gulp-html-replace": "^1.6.1",
+        "gulp-htmlmin": "^3.0.0",
+        "gulp-imagemin": "^3.1.1",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^2.3.2",
+        "gulp-sourcemaps": "^2.2.0",
+        "gulp-uglify": "^2.0.0",
+        "path": "^0.12.7",
+        "run-sequence": "^1.2.2"
+    },
+    "dependencies": {
+        "cordova-plugin-x-socialsharing": "^5.1.8",
+        "cordova-save-image-gallery": "0.0.26",
+        "es6-promise-plugin": "^4.1.0"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-x-socialsharing": {},
+            "cordova-save-image-gallery": {}
+        }
+    }
 }
