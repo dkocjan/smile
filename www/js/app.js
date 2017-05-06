@@ -14,6 +14,8 @@ const app = {
     $('#loadPhoto').click(app.loadPhoto)
     $('#savePhoto').click(app.savePhoto)
     $('#sharePhoto').click(app.sharePhoto)
+    $('#rotateRight').click(() => app.rotatePhoto('right'))
+    $('#rotateLeft').click(() => app.rotatePhoto('left'))
   },
   
   // Device ready
@@ -128,6 +130,22 @@ const app = {
     
   },
   
+  rotatePhoto: (dir) => {
+    Caman('#image', function() {
+      let deg
+      if (dir === 'right') {
+        deg = 90
+      }
+      else if (dir === 'left') {
+        deg = -90
+      }
+      
+      this.rotate(deg)
+      this.render()
+      
+    })
+  },
+  
   dateFormat: (date) => {
     
     addZero = (i) => {
@@ -171,6 +189,7 @@ const app = {
     Caman('#image', function () {
       
       this.render(() => {
+        
         let image = this.toBase64()
         let params = {
           data: image,
@@ -179,9 +198,12 @@ const app = {
           quality: '80',
           mediaScanner: true
         }
-        window.imageSaver.saveBase64Image(params, onSaveSuccess)
-        onSaveSuccess = (filePath) => console.log(`File saved on ${filePath}`)
-        onSaveError = (msg) => console.log(msg)
+  
+        let onSaveSuccess = (filePath) => console.log(`File saved on ${filePath}`)
+        let onSaveError = (msg) => console.log(msg)
+        
+        window.imageSaver.saveBase64Image(params, onSaveSuccess, onSaveError)
+        
       })
       
     })
