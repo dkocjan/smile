@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
+![](https://github.com/dkocjan/smile/blob/master/www/img/logo_256x256.png)
 
 Smile!
 
@@ -38,12 +38,12 @@ So we decided to make an application such as Smile!. You can add filters to impr
 * * *
 
 # Description
-## [](#header-2)How use it
+## How use it
 
 It is pretty simple. All you have to do is to download our application and install on your mobile device.
 
 When we open we can see our main page.
-![](https://guides.github.com/activities/hello-world/branching.png)
+![]()
 
 ### Pick photo:
 
@@ -54,15 +54,15 @@ When we open we can see our main page.
 
 To add filters to your photo simply tap on filter name to see result. You can scroll horizontally to see more filters. Now it is available to use only one filter.
 
-###Save it
+### Save it
 
 When you improve your photo, you can save it just by clicking in save button. Than pick where you want to save it.
 
-###Share
+### Share
 
 You are also able to share your photos with friends. Depend of your mobile device, there is a lot of possibilities to share photos with friends.
 
-###Photo's rotation
+### Photo's rotation
 
 Sometimes we have not usefull direction of our photos. We decided to give you two buttons to helo you with that. You can easily click on arrows to change rotation of photo.
 
