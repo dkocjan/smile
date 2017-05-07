@@ -1,6 +1,6 @@
 ![](https://github.com/dkocjan/smile/blob/master/www/img/logo_256x256.png)
 
-Smile!
+# Smile!
 
 Application which will help you with improving your photos.
 
