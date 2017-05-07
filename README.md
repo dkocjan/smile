@@ -1,102 +1,81 @@
-# The Cayman theme
+![](https://github.com/dkocjan/smile/blob/master/www/img/logo_256x256.png)
 
-[![Build Status](https://travis-ci.org/pages-themes/cayman.svg?branch=master)](https://travis-ci.org/pages-themes/cayman) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-cayman.svg)](https://badge.fury.io/rb/jekyll-theme-cayman)
+Smile!
 
-*Cayman is a Jekyll theme for GitHub Pages. You can [preview the theme to see what it looks like](http://pages-themes.github.io/cayman), or even [use it today](#usage).*
-
-![Thumbnail of cayman](thumbnail.png)
-
-## Usage
-
-To use the Cayman theme:
-
-1. Add the following to your site's `_config.yml`:
-
-    ```yml
-    theme: jekyll-theme-cayman
-    ```
-
-2. Optionally, if you'd like to preview your site on your computer, add the following to your site's `Gemfile`:
-
-    ```ruby
-    gem "github-pages", group: :jekyll_plugins
-    ```
+Application which will help you with improving your photos.
 
 
+<dl>
+<dt>Name</dt>
+<dd>Smile!</dd>
+<dt>Authors</dt>
+<dd>Daniel Kocjan & Sebastian Mieszczańczyk</dd>
+<dt>Released</dt>
+<dd>7th of May 2017</dd>
+</dl>
 
-## Customizing
+### Agenda
 
-### Configuration variables
+- Application aim
+- Description
+  - How use it
+   - Pick photo
+   - Add filters
+   - Save it
+   - Share
+   - Photo's rotation
+- Authors
 
-Cayman will respect the following variables, if set in your site's `_config.yml`:
+# Application aim
 
-```yml
-title: [The title of your site]
-description: [A short description of your site's purpose]
-```
+We wanted to help people with photos customization.
+We know that users want more possibilities to custom photos faster and easier.
+So we decided to make an application such as Smile!. You can add filters to improve your photos.
 
-Additionally, you may choose to set the following optional variables:
+* * *
 
-```yml
-show_downloads: ["true" or "false" to indicate whether to provide a download URL]
-google_analytics: [Your Google Analytics tracking ID]
-```
+# Description
+## How use it
 
-### Stylesheet
+It is pretty simple. All you have to do is to download our application and install on your mobile device.
 
-If you'd like to add your own custom styles:
+When we open we can see our main page.
+![](https://github.com/dkocjan/smile/blob/master/www/img/mainScreen.png)
 
-1. Create a file called `/assets/css/style.scss` in your site
-2. Add the following content to the top of the file, exactly as shown:
-    ```scss
-    ---
-    ---
+### Pick photo:
 
-    @import "{{ site.theme }}";
-    ```
-3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
+*   You can take your photo using your camera on your mobile device. You need to accept photo or you can try make photo again.
+*   You can choose photo from your library on your mobile device.
 
-### Layouts
+Example:
+![](https://github.com/dkocjan/smile/blob/master/www/img/loadedScreen.png)
 
-If you'd like to change the theme's HTML layout:
+### Add filter:
 
-1. [Copy the original template](https://github.com/pages-themes/cayman/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
-2. Create a file called `/_layouts/default.html` in your site
-3. Paste the default layout content copied in the first step
-4. Customize the layout as you'd like
+To add filters to your photo simply tap on filter name to see result. You can scroll horizontally to see more filters. Now it is available to use only one filter.
 
-### Sass variables
+Example:
+![](https://github.com/dkocjan/smile/blob/master/www/img/changedScreen.png)
 
-If you'd like to change the theme's [Sass variables](https://github.com/pages-themes/cayman/blob/master/_sass/variables.scss), set new values before the `@import` line in your stylesheet:
+### Save it
 
-```scss
-$section-headings-color: #0086b3;
+When you improve your photo, you can save it just by clicking in save button. Than pick where you want to save it.
 
-@import "{{ site.theme }}";
-```
+### Share
 
-## Roadmap
+You are also able to share your photos with friends. Depend of your mobile device, there is a lot of possibilities to share photos with friends.
 
-See the [open issues](https://github.com/pages-themes/cayman/issues) for a list of proposed features (and known issues).
+### Photo's rotation
 
-## Project philosophy
+Sometimes we have not usefull direction of our photos. We decided to give you two buttons to helo you with that. You can easily click on arrows to change rotation of photo.
 
-The Cayman theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
+* * *
 
-## Contributing
+# Authors
 
-Interested in contributing to Cayman? We'd love your help. Cayman is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](CONTRIBUTING.md) for instructions on how to contribute.
+We are students on Wyższa Szkoła Ekonomii i Informatyki in Cracow.
+It is our project to pass the subject. There are links to our linkedIn's account to check more information about us:
+[Daniel Kocjan LinkedIn](https://www.linkedin.com/in/dkocjan/)
+[Sebastian Mieszczańczyk LinkedIn](https://www.linkedin.com/in/www.linkedin.com/in/mieszczanczyks)
 
-### Previewing the theme locally
 
-If you'd like to preview the theme locally (for example, in the process of proposing a change):
-
-1. Clone down the theme's repository (`git clone https://github.com/pages-themes/cayman`)
-2. `cd` into the theme's directory
-3. Run `script/bootstrap` to install the necessary dependencies
-4. Run `bundle exec jekyll serve` to start the preview server
-5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
-
-### Running tests
-
-The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` one before the test script will work.

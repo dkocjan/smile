@@ -1,6 +1,3 @@
----
-layout: default
----
 ![](https://github.com/dkocjan/smile/blob/master/www/img/logo_256x256.png)
 
 Smile!
@@ -43,16 +40,22 @@ So we decided to make an application such as Smile!. You can add filters to impr
 It is pretty simple. All you have to do is to download our application and install on your mobile device.
 
 When we open we can see our main page.
-![]()
+![](https://github.com/dkocjan/smile/blob/master/www/img/mainScreen.png)
 
 ### Pick photo:
 
 *   You can take your photo using your camera on your mobile device. You need to accept photo or you can try make photo again.
 *   You can choose photo from your library on your mobile device.
 
+Example:
+![](https://github.com/dkocjan/smile/blob/master/www/img/loadedScreen.png)
+
 ### Add filter:
 
 To add filters to your photo simply tap on filter name to see result. You can scroll horizontally to see more filters. Now it is available to use only one filter.
+
+Example:
+![](https://github.com/dkocjan/smile/blob/master/www/img/changedScreen.png)
 
 ### Save it
 
