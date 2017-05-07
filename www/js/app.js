@@ -1,5 +1,11 @@
 const app = {
-  
+  //splashscreen
+  showSplash: () => {
+    navigator.splashscreen.show();
+    setTimeout(function () {
+        navigator.splashscreen.hide();
+    }, 2000);
+},
   // Init app
   initialize: () => {
     app.bindEvents()
