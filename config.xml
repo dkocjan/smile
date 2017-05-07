@@ -9,18 +9,21 @@
   </author>
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="3000" />
+    
     <plugin name="cordova-plugin-camera" spec="~2.4.0" />
     <plugin name="cordova-plugin-file" spec="~4.3.2" />
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.2" />
     <plugin name="cordova-plugin-media-capture" spec="~1.4.2" />
     <plugin name="cordova-plugin-x-socialsharing" spec="~5.1.8" />
     <plugin name="cordova-save-image-gallery" spec="~0.0.26" />
+    
     <icon src="www/img/logo_57x57.png" />
+
     <splash src="www/img/splashIOSxsPortr.png" width="320" height="480" />
     <splash src="www/img/splashIOSmidPortr.png" width="640" height="960" />
     <splash src="www/img/splashIOSPortrMax.png" width="750" height="1334" />
     <splash src="www/img/splashIOSmaxLand.png" width="2208" height="1242" />
     <splash src="www/img/splashRetinaMax.png" width="1536" height="2048" />
-    <preference name="AutoHideSplashScreen" value="true" />
-    <preference name="SplashScreenDelay" value="3000" />
 </widget>
