@@ -14,4 +14,5 @@
     <plugin name="cordova-plugin-media-capture" spec="~1.4.2" />
     <plugin name="cordova-plugin-x-socialsharing" spec="~5.1.8" />
     <plugin name="cordova-save-image-gallery" spec="~0.0.26" />
+    <icon src="www/img/logo_57x57.png" />
 </widget>
