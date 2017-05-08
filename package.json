@@ -60,14 +60,22 @@
         "run-sequence": "^1.2.2"
     },
     "dependencies": {
+        "cordova-browser": "^4.1.0",
+        "cordova-plugin-camera": "~2.4.0",
+        "cordova-plugin-file": "~4.3.2",
+        "cordova-plugin-media-capture": "~1.4.2",
+        "cordova-plugin-splashscreen": "~4.0.2",
         "cordova-plugin-x-socialsharing": "^5.1.8",
-        "cordova-save-image-gallery": "0.0.26",
-        "es6-promise-plugin": "^4.1.0"
+        "cordova-save-image-gallery": "0.0.26"
     },
     "cordova": {
         "plugins": {
             "cordova-plugin-x-socialsharing": {},
-            "cordova-save-image-gallery": {}
+            "cordova-save-image-gallery": {},
+            "cordova-plugin-camera": {},
+            "cordova-plugin-file": {},
+            "cordova-plugin-media-capture": {},
+            "cordova-plugin-splashscreen": {}
         }
     }
 }

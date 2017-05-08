@@ -1,13 +1,16 @@
 const app = {
-  //splashscreen
+  
+  // Splashscreen
   showSplash: () => {
-    navigator.splashscreen.show();
-    setTimeout(function () {
-        navigator.splashscreen.hide();
-    }, 2000);
-},
+    navigator.splashscreen.show()
+    setTimeout(() => {
+      navigator.splashscreen.hide()
+    }, 2500)
+  },
+  
   // Init app
   initialize: () => {
+    app.showSplash()
     app.bindEvents()
     app.camanFilters()
   },
@@ -137,7 +140,7 @@ const app = {
   },
   
   rotatePhoto: (dir) => {
-    Caman('#image', function() {
+    Caman('#image', function () {
       let deg
       if (dir === 'right') {
         deg = 90
@@ -196,17 +199,17 @@ const app = {
       
       this.render(() => {
         
-        let image = this.toBase64()
+        let image  = this.toBase64()
         let params = {
-          data: image,
-          prefix: 'smile_',
-          format: 'JPG',
-          quality: '80',
+          data:         image,
+          prefix:       'smile_',
+          format:       'JPG',
+          quality:      '80',
           mediaScanner: true
         }
-  
+        
         let onSaveSuccess = (filePath) => console.log(`File saved on ${filePath}`)
-        let onSaveError = (msg) => console.log(msg)
+        let onSaveError   = (msg) => console.log(msg)
         
         window.imageSaver.saveBase64Image(params, onSaveSuccess, onSaveError)
         
@@ -216,7 +219,7 @@ const app = {
   },
   
   sharePhoto: () => {
-    Caman('#image', function() {
+    Caman('#image', function () {
       
       this.render(() => {
         let image = this.toBase64()
