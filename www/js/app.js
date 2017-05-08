@@ -1,12 +1,12 @@
 const app = {
   
   // Splashscreen
-  showSplash: () => {
-    navigator.splashscreen.show()
-    setTimeout(() => {
-      navigator.splashscreen.hide()
-    }, 2500)
-  },
+  //showSplash: () => {
+  //  navigator.splashscreen.show()
+  //  setTimeout(() => {
+  //    navigator.splashscreen.hide()
+  //  }, 2500)
+  //},
   
   // Init app
   initialize: () => {
