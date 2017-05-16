@@ -10,7 +10,7 @@ const app = {
   
   // Init app
   initialize: () => {
-    app.showSplash()
+    // app.showSplash()
     app.bindEvents()
     app.camanFilters()
   },
@@ -127,7 +127,7 @@ const app = {
   
   loadPhoto: () => {
     let img = `<img
-        src="../img/1.jpg"
+        src="./img/1.jpg"
         id="image"
         class="img-fluid mt-2"
       />`
