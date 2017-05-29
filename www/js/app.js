@@ -10,7 +10,11 @@ const app = {
   
   // Init app
   initialize: () => {
+    <<<<<<< HEAD
+    //app.showSplash()
+    =======
     // app.showSplash()
+    >>>>>>> refs/remotes/origin/master
     app.bindEvents()
     app.camanFilters()
   },
@@ -103,7 +107,6 @@ const app = {
       // Listen for clicks on the filters
       let effect = $.trim(f[ 0 ].id)
       
-      console.log(effect)
       app.config.currentFilter = effect
       
       Caman('#image', function () {
@@ -199,19 +202,30 @@ const app = {
       
       this.render(() => {
         
-        let image  = this.toBase64()
+        let image = this.toBase64()
         let params = {
           data:         image,
-          prefix:       'smile_',
-          format:       'JPG',
-          quality:      '80',
-          mediaScanner: true
+          prefix:       `smile_${id}_`,
+          format:       'PNG',
+          quality:      '50',
+          mediaScanner: false
         }
         
-        let onSaveSuccess = (filePath) => console.log(`File saved on ${filePath}`)
-        let onSaveError   = (msg) => console.log(msg)
-        
-        window.imageSaver.saveBase64Image(params, onSaveSuccess, onSaveError)
+        window.imageSaver.saveBase64Image(params, function (filePath) {
+          let counter = window.localStorage.getItem('smile_counter')
+          
+          if (counter === null || counter === undefined) {
+            window.localStorage.setItem('smile_counter', 1)
+          } else {
+            window.localStorage.setItem('smile_counter', counter + 1)
+          }
+          
+          counter = window.localStorage.getItem('smile_counter')
+          navigator.notification.alert(`File saved in ${filePath}.\n
+          You already saved ${counter} images through Smile!`)
+        }, function onSaveError(err) {
+          console.log(err)
+        })
         
       })
       
