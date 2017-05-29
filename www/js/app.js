@@ -10,11 +10,7 @@ const app = {
   
   // Init app
   initialize: () => {
-    <<<<<<< HEAD
     //app.showSplash()
-    =======
-    // app.showSplash()
-    >>>>>>> refs/remotes/origin/master
     app.bindEvents()
     app.camanFilters()
   },
